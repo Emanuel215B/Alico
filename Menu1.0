@@ -1,0 +1,23 @@
+opciones = ["Realizar calibración", "Iniciar medicion"]
+
+print("Por favor, elija una de las siguientes opciones:")
+for i, opcion in enumerate(opciones):
+    print(f"{i + 1}) {opcion}")
+
+entrada = input("Ingrese el número de la opción elegida: ")
+try:
+    entrada = int(entrada)
+    if 1 <= entrada <= len(opciones):
+        seleccion = opciones[entrada - 1]
+        # Mostrar un mensaje al usuario
+        print(f"Usted eligió {seleccion}")
+        if (entrada - 1) == 0:
+          print("uno")
+        if (entrada - 1) == 1:
+          print("dos")
+    else:
+        # Mostrar un mensaje de error al usuario
+        print("La opción ingresada no es válida")
+except:
+    # Mostrar un mensaje de error al usuario
+    print("La entrada debe ser un número")
