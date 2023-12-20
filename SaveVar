@@ -1,0 +1,26 @@
+# Definir el nombre del archivo donde se guardará la variable
+archivo = "variable.txt"
+
+# Definir la variable de tipo flotante
+variable = 3.1416
+
+# Guardar la variable en el archivo con dos decimales
+with open(archivo, "w") as f:
+    f.write(f"{variable:.2f}")
+
+# Leer la variable desde el archivo y convertirla a flotante
+with open(archivo, "r") as f:
+    variable = float(f.read())
+
+# Mostrar el valor de la variable
+print(f"El valor de la variable es {variable}")
+
+# Actualizar la variable con un nuevo valor
+variable = 2.7183
+
+# Guardar la variable actualizada en el archivo
+with open(archivo, "w") as f:
+    f.write(f"{variable:.2f}")
+
+# Mostrar el valor de la variable actualizada
+print(f"El valor de la variable actualizada es {variable}")
