@@ -10,16 +10,15 @@ for i, opcion in enumerate(opciones):
 
 entrada = input("Ingrese el número de la opción elegida: ")
 try:
+    entrada = int(entrada)
     GPIO.setmode(GPIO.BCM)
     hx = HX711(dout_pin=21, pd_sck_pin=20) #Pines en la raspberry.
     err = hx.zero()
     if err:
         raise ValueError('La tara no se puede definir.')
 
-    entrada = int(entrada)
     if 1 <= entrada <= len(opciones):
         seleccion = opciones[entrada - 1]
-        # Mostrar un mensaje al usuario
         print(f"Usted eligió {seleccion}")
         if (entrada - 1) == 0:
           reading = hx.get_raw_data_mean()
@@ -46,6 +45,7 @@ try:
 
         if (entrada - 1) == 1:
           print("dos")
+
     else:
         # Mostrar un mensaje de error al usuario
         print("La opción ingresada no es válida")
