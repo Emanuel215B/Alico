@@ -47,6 +47,11 @@ try:
         if (entrada - 1) == 1:
           print("dos")
 
+        print("Inicio de lectura")
+        input('Presione Enter para iniciar lectura')
+        while True:
+            print("El peso actual en gramos es de %.2f" % (hx.get_weight_mean(2)))        
+
     else:
         # Mostrar un mensaje de error al usuario
         print("La opción ingresada no es válida")
